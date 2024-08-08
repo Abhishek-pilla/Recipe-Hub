@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST" class="col-6 mt-5 mx-auto card p-3 shadow lg" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group mb-2">
+        <label>Recipe Name</label>
+        <input type="text" required class="form-control" name="Recipe_name" placeholder="Recipe Name">
+    </div>
+    <div class="form-group">
+        <label>Recipe Description</label>
+        <textarea type="text" class="form-control" name="Recipe_description" placeholder="Recipe Description"></textarea>
+    </div>
+    <!-- <div class="form-group">
+        <label>Recipe Ingredients</label>
+        <input type="text" class="form-control" name="Recipe_Ingredients" placeholder="Recipe Ingredients">
+    </div> -->
+    <div class="form-file">
+        <label>Recipe Image</label>
+        <input type="file" class="form-control" name="Recipe_Image" placeholder="Recipe Image">
+    </div>
+    <button type="submit" class="btn btn-success">Add recipe</button>
+</form>
+{% endblock %}
